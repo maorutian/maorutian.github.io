@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>Build your own blog with Hexo and Github Pages </title>
+    <url>/2020/04/29/Build-your-own-blog-with-Hexo-and-Github-Pages/</url>
+    <content><![CDATA[<h2 id="Before-Starting"><a href="#Before-Starting" class="headerlink" title="Before Starting"></a>Before Starting</h2><h3 id="Why-I-want-to-build-my-own-blog"><a href="#Why-I-want-to-build-my-own-blog" class="headerlink" title="Why I want to build my own blog?"></a>Why I want to build my own blog?</h3><p>A blog can help me record all the knowledge I learned. </p>
+<h3 id="Why-use-Hexo-and-github-page"><a href="#Why-use-Hexo-and-github-page" class="headerlink" title="Why use Hexo and github page?"></a>Why use Hexo and github page?</h3><p>I am looking for a framework that supports markdown and the ability to host online free of charge and has support for continuous deployment whenever I check in my markdown file.<br>There are various popular static HTML generator frameworks available in the market, such as hugo, jeykill, and hexo. I decided to go with Hexo framework and GitHub Pages for hosting. </p>
+<a id="more"></a>
+
+<h3 id="What-is-Hexo"><a href="#What-is-Hexo" class="headerlink" title="What is Hexo?"></a>What is Hexo?</h3><p><a href="https://hexo.io/docs/index.html" target="_blank" rel="noopener">Hexo</a> is framework which can generate Markdown to html with a beautiful theme.</p>
+<h3 id="What-is-Github-Pages"><a href="#What-is-Github-Pages" class="headerlink" title="What is Github Pages?"></a>What is Github Pages?</h3><p><a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a> is a static site hosting service that takes HTML, CSS, and JavaScript files straight from a repository on GitHub.</p>
+<h2 id="Get-Starting"><a href="#Get-Starting" class="headerlink" title="Get Starting"></a>Get Starting</h2><h3 id="1-Install-Hexo-and-initialize-our-blog"><a href="#1-Install-Hexo-and-initialize-our-blog" class="headerlink" title="1. Install Hexo and initialize our blog"></a>1. Install Hexo and initialize our blog</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># install hexo</span><br><span class="line">npm install -g hexo-cli</span><br><span class="line"></span><br><span class="line"># initialize a hexo folder called blog or whatever you want</span><br><span class="line">hexo init blog</span><br><span class="line"></span><br><span class="line">#change to blog folder</span><br><span class="line">cd blog</span><br><span class="line"></span><br><span class="line">#generate the static files (html, css, etc) for your website</span><br><span class="line">hexo generate</span><br><span class="line"></span><br><span class="line">#Starts a local server. By default, this is at http:&#x2F;&#x2F;localhost:4000&#x2F;.</span><br><span class="line">hexo server</span><br></pre></td></tr></table></figure>
+
+<p>If you go to <code>http://localhost:4000/</code> you can see your blog now. hexo initialize a Hello World document in the blog, you can see it now.</p>
+<p><img src="/uploads/Build-your-own-blog-with-Hexo-and-Github-Pages-01.png" alt="Blog"></p>
+<p>Hexo uses Landscape for default theme.<br>If you want to use the same theme like my blog, cheack this article: <a href="https://maorutian.github.io/2020/04/30/Hexo-Theme-Next/" target="_blank" rel="noopener">Hexo Theme Next</a> </p>
+<h3 id="2-Deploy-blog-at-Github-Pages"><a href="#2-Deploy-blog-at-Github-Pages" class="headerlink" title="2. Deploy blog at Github Pages"></a>2. Deploy blog at Github Pages</h3><h4 id="1-Create-a-new-Repository-in-github"><a href="#1-Create-a-new-Repository-in-github" class="headerlink" title="1) Create a new Repository in github"></a>1) Create a new Repository in github</h4><p>Create a new repository: <a href="https://username.github.io" target="_blank" rel="noopener">https://github.com/new</a>, replace username with your own (same as Owner on the left).</p>
+<p><img src="/uploads/Build-your-own-blog-with-Hexo-and-Github-Pages-02.png" alt="Repo"></p>
+<h4 id="2-Install-Deployer-Plugin"><a href="#2-Install-Deployer-Plugin" class="headerlink" title="2) Install Deployer Plugin"></a>2) Install Deployer Plugin</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm i --save hexo-deployer-git</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-Deployment-Configuration"><a href="#3-Deployment-Configuration" class="headerlink" title="3) Deployment Configuration"></a>3) Deployment Configuration</h4><p>open <code>_config.yml</code> file under <code>blog</code> folder, search deploy</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: https:&#x2F;&#x2F;github.com&#x2F;username&#x2F;username.github.io  # use your own username</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
+
+<h4 id="4-Deploy"><a href="#4-Deploy" class="headerlink" title="4) Deploy"></a>4) Deploy</h4><p>Now, we can deploy our blog, before deploy we’d clean the cache and make sure we generated static files.</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#Cleans the cache file (db.json) and generated files (public).</span><br><span class="line">hexo clean</span><br><span class="line"></span><br><span class="line">#Generates static files.</span><br><span class="line">hexo generate</span><br><span class="line"></span><br><span class="line">#Deploys your website.</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>Wait one minute and Visit <a href="https://username.github.io" target="_blank" rel="noopener">https://username.github.io</a>, Your blog is here now! Done!!</p>
+]]></content>
+      <categories>
+        <category>Blog Setting</category>
+      </categories>
+      <tags>
+        <tag>Github Pages</tag>
+        <tag>Blog</tag>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo Theme Next</title>
+    <url>/2020/04/29/Hexo-Theme-Next/</url>
+    <content><![CDATA[<p><a href="https://github.com/theme-next/hexo-theme-next" target="_blank" rel="noopener">NextT</a> is a high quality elegant Hexo theme. I used it in this Blog.</p>
+<h2 id="1-Install-NextT"><a href="#1-Install-NextT" class="headerlink" title="1 Install NextT"></a>1 Install NextT</h2><h3 id="1-Install-NextT-1"><a href="#1-Install-NextT-1" class="headerlink" title="1) Install NextT"></a>1) Install NextT</h3><p>Dwonload NextT files to <code>theme</code></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># change to your hexo folder (it is blog in my case)</span><br><span class="line">$ cd blog</span><br><span class="line"></span><br><span class="line"># clone NextT from github</span><br><span class="line">$ git clone https:&#x2F;&#x2F;github.com&#x2F;theme-next&#x2F;hexo-theme-next.git</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+
+<h3 id="2-Set-Hexo-Theme-to-NextT"><a href="#2-Set-Hexo-Theme-to-NextT" class="headerlink" title="2) Set Hexo Theme to NextT"></a>2) Set Hexo Theme to NextT</h3><blockquote>
+<p>Hint:</p>
+<ul>
+<li>The <code>_config.yml</code> file in <code>blog</code> folder is called <code>hexo-config.yml</code> in my article.<br>After chage <code>hexo-config.yml</code>, we need restart server  </li>
+<li>The <code>_config.yml</code> file in <code>theme</code> folder is called <code>next-config.yml</code>  in my article.<br>We don’t need to restart server after chage <code>next-config.yml</code></li>
+</ul>
+</blockquote>
+<p>Open <code>hexo-config.yml</code>, find <code>theme</code>, change it to <code>next</code></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">theme: next</span><br></pre></td></tr></table></figure>
+
+<p>Now, we installed NextT successfully.</p>
+<p>Let us start server and check our blog in browse</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#generate the static files (html, css, etc) for your website</span><br><span class="line">hexo generate</span><br><span class="line"></span><br><span class="line">#Starts a local server. By default, this is at http:&#x2F;&#x2F;localhost:4000&#x2F;.</span><br><span class="line">hexo server</span><br></pre></td></tr></table></figure>
+<p>We can see the new theme.</p>
+<h2 id="2-NextT-Setting"><a href="#2-NextT-Setting" class="headerlink" title="2. NextT Setting"></a>2. NextT Setting</h2><blockquote>
+<p>Those are changes I set in my blog</p>
+</blockquote>
+<h3 id="1-WebStie-informations-Setting"><a href="#1-WebStie-informations-Setting" class="headerlink" title="1) WebStie informations Setting"></a>1) WebStie informations Setting</h3><p>open <code>hexo-config.yml</code></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># Site</span><br><span class="line">title: Maoru&#39;s Blog</span><br><span class="line">subtitle: &#39;Saty Hungry, Stay Foolish&#39;</span><br><span class="line">description: &#39;&#39;</span><br><span class="line">keywords:</span><br><span class="line">author: Maoru Tian</span><br><span class="line">language: en</span><br><span class="line">timezone: &#39;&#39;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-Scheme-Setting"><a href="#2-Scheme-Setting" class="headerlink" title="2) Scheme Setting"></a>2) Scheme Setting</h3><p>open <code>next-config.yml</code>, search Schemes</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># Schemes</span><br><span class="line">#scheme: Muse</span><br><span class="line">#scheme: Mist</span><br><span class="line">#scheme: Pisces</span><br><span class="line">scheme: Gemini</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-Menu-Setting"><a href="#3-Menu-Setting" class="headerlink" title="3) Menu Setting"></a>3) Menu Setting</h3><ul>
+<li>open <code>next-config.yml</code>, search menu</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">menu:</span><br><span class="line">  home: &#x2F; || fa fa-home</span><br><span class="line">  # about: &#x2F;about&#x2F; || fa fa-user</span><br><span class="line">  tags: &#x2F;tags&#x2F; || fa fa-tags</span><br><span class="line">  categories: &#x2F;categories&#x2F; || fa fa-th</span><br><span class="line">  archives: &#x2F;archives&#x2F; || fa fa-archive</span><br><span class="line">  #schedule: &#x2F;schedule&#x2F; || fa fa-calendar</span><br><span class="line">  #sitemap: &#x2F;sitemap.xml || fa fa-sitemap</span><br><span class="line">  #commonweal: &#x2F;404&#x2F; || fa fa-heartbeat</span><br></pre></td></tr></table></figure>
+<p>we have about, tags, categories menu items now, but we don’t have markdown file associated to them.</p>
+<ul>
+<li>create new pages</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo new page &quot;about&quot;</span><br><span class="line">hexo new page &quot;tags&quot;</span><br><span class="line">hexo new page &quot;categories&quot;</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-Search-Function"><a href="#4-Search-Function" class="headerlink" title="4) Search Function"></a>4) Search Function</h3><p>A search function can help you manage your blog better.</p>
+<ol>
+<li>install hexo-generator-searchdb</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install hexo-generator-searchdb --save</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>add the flowing code to the end of <code>hexo-config.yml</code></li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">search:</span><br><span class="line">  path: search.xml</span><br><span class="line">  field: post</span><br><span class="line">  format: html</span><br><span class="line">  limit: 10000</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>open <code>next-config.yml</code>, search local_search</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># Local search</span><br><span class="line">local_search:</span><br><span class="line">  enable: true</span><br></pre></td></tr></table></figure>
+
+<h3 id="5-Social-Links"><a href="#5-Social-Links" class="headerlink" title="5) Social Links"></a>5) Social Links</h3><p>open <code>next-config.yml</code>, search social</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">social:</span><br><span class="line">  GitHub: https:&#x2F;&#x2F;github.com&#x2F;maorutian || fab fa-github</span><br><span class="line">  #E-Mail: mailto:yourname@gmail.com || fa fa-envelope</span><br><span class="line">  #Weibo: https:&#x2F;&#x2F;weibo.com&#x2F;yourname || fab fa-weibo</span><br><span class="line">  #Google: https:&#x2F;&#x2F;plus.google.com&#x2F;yourname || fab fa-google</span><br><span class="line">  #Twitter: https:&#x2F;&#x2F;twitter.com&#x2F;yourname || fab fa-twitter</span><br><span class="line">  #FB Page: https:&#x2F;&#x2F;www.facebook.com&#x2F;yourname || fab fa-facebook</span><br><span class="line">  #StackOverflow: https:&#x2F;&#x2F;stackoverflow.com&#x2F;yourname || fab fa-stack-overflow</span><br><span class="line">  #YouTube: https:&#x2F;&#x2F;youtube.com&#x2F;yourname || fab fa-youtube</span><br><span class="line">  #Instagram: https:&#x2F;&#x2F;instagram.com&#x2F;yourname || fab fa-instagram</span><br><span class="line">  #Skype: skype:yourname?call|chat || fab fa-skype</span><br></pre></td></tr></table></figure>
+
+<p>That is all features I used in my blog, If you find more exciting features, Please share to me</p>
+]]></content>
+      <categories>
+        <category>Blog Setting</category>
+      </categories>
+      <tags>
+        <tag>Blog</tag>
+        <tag>Hexo</tag>
+        <tag>Next Theme</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Leetcode Two Sum in Javascript</title>
+    <url>/2020/04/30/Leetcode-Two-Sum-in-Javascript/</url>
+    <content><![CDATA[<p>Question <a href="https://leetcode.com/problems/two-sum/" target="_blank" rel="noopener">Leetcode - Two Sum</a></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Given an array of integers, </span><br><span class="line">return indices of the two numbers such that they add up to a specific target.</span><br><span class="line">You may assume that each input would have exactly one solution, </span><br><span class="line">and you may not use the same element twice.</span><br></pre></td></tr></table></figure>
+
+<a id="more"></a>
+
+<h2 id="1-Brute-Force"><a href="#1-Brute-Force" class="headerlink" title="1.Brute Force"></a>1.Brute Force</h2><h3 id="Thought"><a href="#Thought" class="headerlink" title="Thought"></a>Thought</h3><ol>
+<li>Loop1: Loop through each element  num[i]</li>
+<li>Loop2: In Loop1, Loop through the other elements num[j] in Loop1</li>
+<li>In Loop2, If num[j] is equal to target minus num[i], return i and j</li>
+</ol>
+<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var twoSum &#x3D; function (nums, target) &#123;</span><br><span class="line">      for (let i &#x3D; 0; i &lt; nums.length; i++) &#123;</span><br><span class="line">        for (let j &#x3D; i + 1; j &lt; nums.length; j++) &#123;</span><br><span class="line">          if (nums[j] &#x3D;&#x3D;&#x3D; target - nums[i]) &#123;</span><br><span class="line">            return [i, j]</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Complexity-Analysis"><a href="#Complexity-Analysis" class="headerlink" title="Complexity Analysis"></a>Complexity Analysis</h3><ul>
+<li>Time complexity : <code>O(n^2)</code> For each element, we try to find its complement by looping through the rest of array which takes O(n)O(n) time.</li>
+<li>Space complexity : <code>O(1)</code>.</li>
+</ul>
+<h2 id="2-Hash-Table"><a href="#2-Hash-Table" class="headerlink" title="2.Hash Table"></a>2.Hash Table</h2><h3 id="Thought-1"><a href="#Thought-1" class="headerlink" title="Thought"></a>Thought</h3><ol>
+<li>Create a Map</li>
+<li>Loop1: Loop through each element num[i]</li>
+<li>In Loop1: Caculate target  minus num[i], assume answer is x</li>
+<li>If x is not in the map, set x as key and i as value in the map<br>If x already exists in the map, return num[i] and the value of x</li>
+<li>return empty array if Loop1 doesn’t return anything</li>
+</ol>
+<h4 id="Why-we-use-Map-Can-we-use-Object"><a href="#Why-we-use-Map-Can-we-use-Object" class="headerlink" title="Why we use Map? Can we use Object?"></a>Why we use Map? Can we use Object?</h4><p>Yes, We can use <code>Object</code> as our Hash Table, because both store key-value pairs. But<br><code>Map</code> is mainly used for fast searching and looking up data. It is more like Hash Table. It is better in this case.<br>More difference between Map and Object, see <a href="https://maorutian.github.io/2020/04/30/Javascript-Map-VS-Object/" target="_blank" rel="noopener">Javascript: Map VS Object</a>.</p>
+<h4 id="Why-we-use-index-i-as-value-number-x-as-key"><a href="#Why-we-use-index-i-as-value-number-x-as-key" class="headerlink" title="Why we use index(i) as value, number(x) as key?"></a>Why we use index(i) as value, number(x) as key?</h4><p>Because when we check whether the number exists in the map, we use <code>map.has()</code>. This method returns a boolean indicating whether an element with the specified KEY exists or not. So we use number as key. Once we find it, we can use <code>map.get()</code> to get the value in the map - index(i).</p>
+<h3 id="Code-1"><a href="#Code-1" class="headerlink" title="Code"></a>Code</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var twoSum &#x3D; function (nums, target) &#123;</span><br><span class="line">      const map &#x3D; new Map();</span><br><span class="line">      for (let i &#x3D; 0; i &lt; nums.length; i++) &#123;</span><br><span class="line">        const x &#x3D; target - nums[i];</span><br><span class="line">        if (map.has(x)) &#123;</span><br><span class="line">          return [i, map.get(x)];</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">          map.set(nums[i], i);</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">      return [];</span><br><span class="line">    &#125;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Complexity-Analysis-1"><a href="#Complexity-Analysis-1" class="headerlink" title="Complexity Analysis"></a>Complexity Analysis</h3><ul>
+<li><p>Time complexity : <code>O(n)</code>. We traverse the list containing elements only once <code>O(n)</code>. Each look up in the table costs only <code>O(1)</code> time.</p>
+</li>
+<li><p>Space complexity : <code>O(n)</code>. The extra space required depends on the number of items stored in the hash table, which stores at most nn elements.</p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Leetcode</category>
+      </categories>
+      <tags>
+        <tag>Javascript</tag>
+        <tag>Leetcode</tag>
+        <tag>Map</tag>
+        <tag>Hash Table</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Javascript: Map VS Object</title>
+    <url>/2020/04/30/Javascript-Map-VS-Object/</url>
+    <content><![CDATA[<p><code>Map</code> and <code>Object</code> both are data collection types, they all store key-value pairs.</p>
+<h3 id="Difference"><a href="#Difference" class="headerlink" title="Difference"></a>Difference</h3><h4 id="Key-type"><a href="#Key-type" class="headerlink" title="Key type"></a>Key type</h4><ul>
+<li>The keys MUST be String in <code>Object</code>. See <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Property_Accessors" target="_blank" rel="noopener">Property Accessor docs</a></li>
+</ul>
+<blockquote>
+<p>Property names must be strings. This means that non-string objects cannot be used as keys in the object. Any non-string object, including a number, is typecasted into a string via the toString method</p>
+</blockquote>
+<a id="more"></a>
+
+<p>Example:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&gt; var foo &#x3D; &#123;&#125;</span><br><span class="line">undefined</span><br><span class="line"></span><br><span class="line">&gt; foo[23213] &#x3D; &#39;swag&#39;</span><br><span class="line">&#39;swag&#39;</span><br><span class="line"></span><br><span class="line">&gt; foo</span><br><span class="line">&#123; &#39;23213&#39;: &#39;swag&#39; &#125;</span><br><span class="line"></span><br><span class="line">&gt; typeof(Object.keys(foo)[0])</span><br><span class="line">&#39;string&#39;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>But in <code>Map</code> it can be ANY data type.</li>
+</ul>
+<h4 id="Element-order"><a href="#Element-order" class="headerlink" title="Element order"></a>Element order</h4><ul>
+<li><p>The Elements in <code>Map</code>are ordered. Thus, when iterating over it, a Map object returns keys in order of insertion.</p>
+</li>
+<li><p>The Elements of an <code>Object</code> are not ordered</p>
+</li>
+</ul>
+<h4 id="Inheritance"><a href="#Inheritance" class="headerlink" title="Inheritance"></a>Inheritance</h4><ul>
+<li>Map is an instance of <code>Object</code>.</li>
+<li><code>Object</code> is not an instance of <code>Map</code>.</li>
+</ul>
+<h3 id="When-to-use-Map"><a href="#When-to-use-Map" class="headerlink" title="When to use Map"></a>When to use Map</h3><h4 id="loop-through"><a href="#loop-through" class="headerlink" title="loop through"></a>loop through</h4><p> <code>Map</code> is mainly used for fast searching and looking up data.</p>
+<p> For <code>Object</code>, if you want to loop through keys、values and entries, you have to convert Object to Array using <code>Object.keys()</code>、<code>Object.values()</code> and <code>Object.entries()</code>，or using <code>for ... in</code>. But a for…in loop only iterates over enumerable, non-Symbol properties, and the order is random.</p>
+<p>A <code>Map</code> is an iterable, so it can be directly iterated.We can use <code>for ... of</code> or <code>forEach</code>.</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"> for (let [key, value] of map) &#123;</span><br><span class="line">  console.log(key);</span><br><span class="line">  console.log(value);</span><br><span class="line">&#125;;</span><br><span class="line">map.forEach((key, value) &#x3D;&gt; &#123;</span><br><span class="line">  console.log(key);</span><br><span class="line">  console.log(value);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p>Besides, you can use <code>map.size</code> to get <code>length</code>. but you have to convert Object to Array in object and then use <code>Object.keys({}).length</code></p>
+<h4 id="Lots-of-Add-and-delete-operations"><a href="#Lots-of-Add-and-delete-operations" class="headerlink" title="Lots of Add and delete operations"></a>Lots of Add and delete operations</h4><p><code>Map</code> is purely hash, in scenarios that requires a lot of adding and removing (especially) new pair, <code>Map</code> may perform much better.</p>
+<h4 id="Large-set-of-data"><a href="#Large-set-of-data" class="headerlink" title="Large set of data"></a>Large set of data</h4><p><code>Map</code> tends to perform better in storing large set of data, especially when keys are unknown until run time, and when all keys are the same type and all values are the same type.</p>
+<h3 id="when-to-use-object"><a href="#when-to-use-object" class="headerlink" title="when to use object"></a>when to use object</h3><h4 id="Separate-logic-to-individual-property"><a href="#Separate-logic-to-individual-property" class="headerlink" title="Separate logic to individual property"></a>Separate logic to individual property</h4><p>You variable need separate logic to different property, <code>Object</code> is the choice. <code>Map</code> doesn’t support it.</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var obj &#x3D; &#123;</span><br><span class="line">    id: 1, </span><br><span class="line">    name: &quot;It&#39;s Me!&quot;, </span><br><span class="line">    print: function()&#123; </span><br><span class="line">        return &#96;Object Id: $&#123;this.id&#125;, with Name: $&#123;this.name&#125;&#96;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">console.log(obj.print());&#x2F;&#x2F;Object Id: 1, with Name: It&#39;s Me.</span><br></pre></td></tr></table></figure>
+
+<h4 id="JSON"><a href="#JSON" class="headerlink" title="JSON"></a>JSON</h4><p>JSON has support for <code>Object</code>, but not with <code>Map</code> (yet). So in certain situation where we have to work a lot with JSON, consider <code>Object</code> as preferred option.</p>
+]]></content>
+      <categories>
+        <category>Javascript</category>
+      </categories>
+      <tags>
+        <tag>Javascript</tag>
+        <tag>Map</tag>
+        <tag>Object</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Npm &amp; Npx</title>
+    <url>/2020/08/12/Npm-Npx/</url>
+    <content><![CDATA[<p>We know <code>npm</code> is a package manager, we caninstall node.js packages using npm. But what is <code>npx</code>?<br>I guess that everyone is confused when we start to learn React and see this code</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npx create-react-app my-app</span><br></pre></td></tr></table></figure>
+
+<p>Let talk about <code>npx</code> and see what is the difference between npm and npx.</p>
+<a id="more"></a>
+
+<h3 id="What-is-NPX"><a href="#What-is-NPX" class="headerlink" title="What is NPX?"></a>What is NPX?</h3><ul>
+<li><p>NPX is a tool to execute node.js packages. X means Execute.</p>
+</li>
+<li><p>NPX uses the packages directly from npm registry, no global or local installation required.</p>
+</li>
+</ul>
+<h3 id="When-to-us-NPX"><a href="#When-to-us-NPX" class="headerlink" title="When to us NPX?"></a>When to us NPX?</h3><h4 id="Install-packages-neither-globally-nor-locally"><a href="#Install-packages-neither-globally-nor-locally" class="headerlink" title="Install packages neither globally nor locally"></a>Install packages neither globally nor locally</h4><p>Sometimes, we don’t want to install packages neither globally nor locally, like initiating project. For example, if we want to install <code>create-react-app</code>, we need use <code>npm -g</code> to install it globally. But we only need it when initiating project. It is a waste to install globally.<br>When we use npx, it downloads create-react-app to a template folder and delete it after install.</p>
+<h4 id="Execute-commands-directly-in-Terminal-like-testing"><a href="#Execute-commands-directly-in-Terminal-like-testing" class="headerlink" title="Execute commands directly in Terminal like testing"></a>Execute commands directly in Terminal like testing</h4><p>For example, we want to test our code using <code>Mocha</code>, we are going to check the version of our <code>Mocha</code>.</p>
+<h5 id="without-NPX"><a href="#without-NPX" class="headerlink" title="without NPX"></a>without NPX</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.&#x2F;node_modules&#x2F;.bin&#x2F; mocha --version</span><br></pre></td></tr></table></figure>
+
+<h5 id="with-NPX"><a href="#with-NPX" class="headerlink" title="with NPX"></a>with NPX</h5><p>it create a new shell to run the command.</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npx mocha  --version</span><br></pre></td></tr></table></figure>
+<p>Much better!</p>
+]]></content>
+      <categories>
+        <category>Javascript</category>
+      </categories>
+      <tags>
+        <tag>Javascript</tag>
+      </tags>
+  </entry>
+</search>
