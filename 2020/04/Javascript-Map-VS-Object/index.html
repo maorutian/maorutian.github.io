@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.1.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.0.0/css/all.min.css" integrity="sha256-jTIdiMuX/e3DGJUGwl3pKSxuc6YOuqtJYkM0bGQESA4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"maorutian.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.10.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":true,"transition":{"post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.json","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="Map and Object both are data collection types, they all store key-value pairs. DifferenceKey type The keys MUST be String in Object. See Property Accessor docs   Property names must be strings. This">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Javascript: Map VS Object">
+<meta property="og:url" content="https://maorutian.github.io/2020/04/Javascript-Map-VS-Object/index.html">
+<meta property="og:site_name" content="Maoru&#39;s Blog">
+<meta property="og:description" content="Map and Object both are data collection types, they all store key-value pairs. DifferenceKey type The keys MUST be String in Object. See Property Accessor docs   Property names must be strings. This">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-04-30T23:19:47.000Z">
+<meta property="article:modified_time" content="2022-03-24T15:38:57.810Z">
+<meta property="article:author" content="Maoru Tian">
+<meta property="article:tag" content="Javascript">
+<meta property="article:tag" content="Map">
+<meta property="article:tag" content="Object">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://maorutian.github.io/2020/04/Javascript-Map-VS-Object/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://maorutian.github.io/2020/04/Javascript-Map-VS-Object/","path":"2020/04/Javascript-Map-VS-Object/","title":"Javascript: Map VS Object"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Javascript: Map VS Object | Maoru's Blog</title>
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Maoru's Blog</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Saty Hungry，Stay Foolish</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Difference"><span class="nav-number">1.</span> <span class="nav-text">Difference</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Key-type"><span class="nav-number">1.1.</span> <span class="nav-text">Key type</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Element-order"><span class="nav-number">1.2.</span> <span class="nav-text">Element order</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Inheritance"><span class="nav-number">1.3.</span> <span class="nav-text">Inheritance</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#When-to-use-Map"><span class="nav-number">2.</span> <span class="nav-text">When to use Map</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#loop-through"><span class="nav-number">2.1.</span> <span class="nav-text">loop through</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Lots-of-Add-and-delete-operations"><span class="nav-number">2.2.</span> <span class="nav-text">Lots of Add and delete operations</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Large-set-of-data"><span class="nav-number">2.3.</span> <span class="nav-text">Large set of data</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#when-to-use-object"><span class="nav-number">3.</span> <span class="nav-text">when to use object</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Separate-logic-to-individual-property"><span class="nav-number">3.1.</span> <span class="nav-text">Separate logic to individual property</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#JSON"><span class="nav-number">3.2.</span> <span class="nav-text">JSON</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Maoru Tian</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">6</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://maorutian.github.io/2020/04/Javascript-Map-VS-Object/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Maoru Tian">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Maoru's Blog">
+      <meta itemprop="description" content="">
+    </span>
+    
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Javascript: Map VS Object | Maoru's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Javascript: Map VS Object
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2020-04-30 19:19:47" itemprop="dateCreated datePublished" datetime="2020-04-30T19:19:47-04:00">2020-04-30</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Javascript/" itemprop="url" rel="index"><span itemprop="name">Javascript</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p><code>Map</code> and <code>Object</code> both are data collection types, they all store key-value pairs.</p>
+<h3 id="Difference"><a href="#Difference" class="headerlink" title="Difference"></a>Difference</h3><h4 id="Key-type"><a href="#Key-type" class="headerlink" title="Key type"></a>Key type</h4><ul>
+<li>The keys MUST be String in <code>Object</code>. See <a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Property_Accessors">Property Accessor docs</a></li>
+</ul>
+<blockquote>
+<p>Property names must be strings. This means that non-string objects cannot be used as keys in the object. Any non-string object, including a number, is typecasted into a string via the toString method</p>
+</blockquote>
+<span id="more"></span>
+
+<p>Example:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&gt; var foo = &#123;&#125;</span><br><span class="line">undefined</span><br><span class="line"></span><br><span class="line">&gt; foo[23213] = &#x27;swag&#x27;</span><br><span class="line">&#x27;swag&#x27;</span><br><span class="line"></span><br><span class="line">&gt; foo</span><br><span class="line">&#123; &#x27;23213&#x27;: &#x27;swag&#x27; &#125;</span><br><span class="line"></span><br><span class="line">&gt; typeof(Object.keys(foo)[0])</span><br><span class="line">&#x27;string&#x27;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>But in <code>Map</code> it can be ANY data type.</li>
+</ul>
+<h4 id="Element-order"><a href="#Element-order" class="headerlink" title="Element order"></a>Element order</h4><ul>
+<li><p>The Elements in <code>Map </code>are ordered. Thus, when iterating over it, a Map object returns keys in order of insertion.</p>
+</li>
+<li><p>The Elements of an <code>Object</code> are not ordered</p>
+</li>
+</ul>
+<h4 id="Inheritance"><a href="#Inheritance" class="headerlink" title="Inheritance"></a>Inheritance</h4><ul>
+<li>Map is an instance of <code>Object </code>.</li>
+<li><code>Object </code> is not an instance of <code>Map</code>.</li>
+</ul>
+<h3 id="When-to-use-Map"><a href="#When-to-use-Map" class="headerlink" title="When to use Map"></a>When to use Map</h3><h4 id="loop-through"><a href="#loop-through" class="headerlink" title="loop through"></a>loop through</h4><p> <code>Map</code> is mainly used for fast searching and looking up data.</p>
+<p> For <code>Object </code>, if you want to loop through keys、values and entries, you have to convert Object to Array using <code>Object.keys()</code>、<code>Object.values()</code> and <code>Object.entries()</code>，or using <code>for ... in</code>. But a for…in loop only iterates over enumerable, non-Symbol properties, and the order is random.</p>
+<p>A <code>Map</code> is an iterable, so it can be directly iterated.We can use <code>for ... of</code> or <code>forEach</code>.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"> for (let [key, value] of map) &#123;</span><br><span class="line">  console.log(key);</span><br><span class="line">  console.log(value);</span><br><span class="line">&#125;;</span><br><span class="line">map.forEach((key, value) =&gt; &#123;</span><br><span class="line">  console.log(key);</span><br><span class="line">  console.log(value);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p>Besides, you can use <code>map.size</code> to get <code>length</code>. but you have to convert Object to Array in object and then use <code>Object.keys(&#123;&#125;).length</code></p>
+<h4 id="Lots-of-Add-and-delete-operations"><a href="#Lots-of-Add-and-delete-operations" class="headerlink" title="Lots of Add and delete operations"></a>Lots of Add and delete operations</h4><p><code>Map</code> is purely hash, in scenarios that requires a lot of adding and removing (especially) new pair, <code>Map</code> may perform much better.</p>
+<h4 id="Large-set-of-data"><a href="#Large-set-of-data" class="headerlink" title="Large set of data"></a>Large set of data</h4><p><code>Map</code> tends to perform better in storing large set of data, especially when keys are unknown until run time, and when all keys are the same type and all values are the same type.</p>
+<h3 id="when-to-use-object"><a href="#when-to-use-object" class="headerlink" title="when to use object"></a>when to use object</h3><h4 id="Separate-logic-to-individual-property"><a href="#Separate-logic-to-individual-property" class="headerlink" title="Separate logic to individual property"></a>Separate logic to individual property</h4><p>You variable need separate logic to different property, <code>Object </code> is the choice. <code>Map</code> doesn’t support it.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123;</span><br><span class="line">    id: 1, </span><br><span class="line">    name: &quot;It&#x27;s Me!&quot;, </span><br><span class="line">    print: function()&#123; </span><br><span class="line">        return `Object Id: $&#123;this.id&#125;, with Name: $&#123;this.name&#125;`;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">console.log(obj.print());//Object Id: 1, with Name: It&#x27;s Me.</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="JSON"><a href="#JSON" class="headerlink" title="JSON"></a>JSON</h4><p>JSON has support for <code>Object </code>, but not with <code>Map</code> (yet). So in certain situation where we have to work a lot with JSON, consider <code>Object </code> as preferred option.</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Javascript/" rel="tag"># Javascript</a>
+              <a href="/tags/Map/" rel="tag"># Map</a>
+              <a href="/tags/Object/" rel="tag"># Object</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2020/04/Build-your-own-blog-with-Hexo-and-Github-Pages/" rel="prev" title="Build your own blog with Hexo and Github Pages ">
+                  <i class="fa fa-chevron-left"></i> Build your own blog with Hexo and Github Pages 
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2020/04/Leetcode-Two-Sum-in-Javascript/" rel="next" title="Leetcode Two Sum in Javascript">
+                  Leetcode Two Sum in Javascript <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Maoru Tian</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@next-theme/pjax@0.5.0/pjax.min.js" integrity="sha256-3NkoLDrmHLTYj7csHIZSr0MHAFTXth7Ua/DDt4MRUAg=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script><script src="/js/pjax.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>
