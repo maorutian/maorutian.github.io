@@ -21,23 +21,30 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"maorutian.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.10.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":true,"transition":{"post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.json","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta property="og:type" content="website">
-<meta property="og:title" content="Maoru&#39;s Blog">
-<meta property="og:url" content="https://maorutian.github.io/tags/Hexo/index.html">
+    <meta name="description" content="Module BundlerWebpack and Vite both are module bundlers which take multiple JavaScript files and combine them into a single file that can run in the browser. How does Webpack work?">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Webpack VS Vite">
+<meta property="og:url" content="https://maorutian.github.io/2022/03/Webpack-VS-Vite/index.html">
 <meta property="og:site_name" content="Maoru&#39;s Blog">
+<meta property="og:description" content="Module BundlerWebpack and Vite both are module bundlers which take multiple JavaScript files and combine them into a single file that can run in the browser. How does Webpack work?">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://maorutian.github.io/uploads/Webpack-VS-Vite-01.png">
+<meta property="og:image" content="https://maorutian.github.io/uploads/Webpack-VS-Vite-02.png">
+<meta property="article:published_time" content="2022-03-29T20:06:13.000Z">
+<meta property="article:modified_time" content="2022-03-29T21:08:43.916Z">
 <meta property="article:author" content="Maoru Tian">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://maorutian.github.io/uploads/Webpack-VS-Vite-01.png">
 
 
-<link rel="canonical" href="https://maorutian.github.io/tags/Hexo/">
+<link rel="canonical" href="https://maorutian.github.io/2022/03/Webpack-VS-Vite/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":false,"lang":"en","comments":"","permalink":"","path":"tags/Hexo/index.html","title":""}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://maorutian.github.io/2022/03/Webpack-VS-Vite/","path":"2022/03/Webpack-VS-Vite/","title":"Webpack VS Vite"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Tag: Hexo | Maoru's Blog</title>
+<title>Webpack VS Vite | Maoru's Blog</title>
   
 
 
@@ -127,7 +134,7 @@
 
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           Table of Contents
@@ -140,6 +147,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Module-Bundler"><span class="nav-number">1.</span> <span class="nav-text">Module Bundler</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#How-does-Webpack-work"><span class="nav-number">2.</span> <span class="nav-text">How does Webpack work?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#How-does-Vite-work"><span class="nav-number">3.</span> <span class="nav-text">How does Vite work?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#My-thoughts"><span class="nav-number">4.</span> <span class="nav-text">My thoughts</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -191,70 +199,93 @@
 </noscript>
 
 
-    <div class="main-inner tag posts-collapse">
+    <div class="main-inner post posts-expand">
 
 
   
+
+
+<div class="post-block">
   
   
-  <div class="post-block">
-    <div class="post-content">
-      <div class="collection-title">
-        <h1 class="collection-header">Hexo
-          <small>Tag</small>
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://maorutian.github.io/2022/03/Webpack-VS-Vite/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Maoru Tian">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Maoru's Blog">
+      <meta itemprop="description" content="">
+    </span>
+    
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Webpack VS Vite | Maoru's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Webpack VS Vite
         </h1>
-      </div>
 
-      
-    <div class="collection-year">
-      <span class="collection-header">2020</span>
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2022-03-29 16:06:13" itemprop="dateCreated datePublished" datetime="2022-03-29T16:06:13-04:00">2022-03-29</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h2 id="Module-Bundler"><a href="#Module-Bundler" class="headerlink" title="Module Bundler"></a>Module Bundler</h2><p>Webpack and Vite both are module bundlers which take multiple JavaScript files and combine them into a single file that can run in the browser.</p>
+<h2 id="How-does-Webpack-work"><a href="#How-does-Webpack-work" class="headerlink" title="How does Webpack work?"></a>How does Webpack work?</h2><p><img src="/uploads/Webpack-VS-Vite-01.png" alt="Webpack" loading="lazy"></p>
+<span id="more"></span>
+<p>Webpack bundle your entire JavaScript modules, then launch the dev server, processes all the modules before a single browser request.</p>
+<h2 id="How-does-Vite-work"><a href="#How-does-Vite-work" class="headerlink" title="How does Vite work?"></a>How does Vite work?</h2><p><img src="/uploads/Webpack-VS-Vite-02.png" alt="Vite" loading="lazy"><br>Vite launch the dev server first, only bundle and processes your dependency modules before a single browser request. This is why Vite is able to process your development build faster than Webpack. As your application grows, the amount of time needed to process your development build will increase at a slow rate.<br><strong>Note</strong><br>Why can vite can just converts the files which are in use?<br>The availability of native ES modules in the modern browser.</p>
+<h2 id="My-thoughts"><a href="#My-thoughts" class="headerlink" title="My thoughts"></a>My thoughts</h2><p>Vite enhances the experience of developers in development environment. They don&#39;t have huge difference in production environment. The biggest problem for Vite right now is that it doesn&#39;t have a good community for developer. It is too new, if you have a problem, it is easy to find an answer for webpack; for vite, mostly you have to figure it out by yourself. I might give it a try in development environment and keep using Webpack in the production environment.</p>
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2020-04-29T14:17:29-04:00"
-              content="2020-04-29">
-          04-29
-        </time>
-      </div>
+    
+    
+    
 
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/04/Build-your-own-blog-with-Hexo-and-Github-Pages/" itemprop="url">
-            <span itemprop="name">Build your own blog with Hexo and Github Pages </span>
-          </a>
-      </div>
+    <footer class="post-footer">
 
-      
-    </header>
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/03/Monthly-News-March-2022/" rel="prev" title="Monthly News March 2022">
+                  <i class="fa fa-chevron-left"></i> Monthly News March 2022
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
   </article>
+</div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2020-04-29T10:36:01-04:00"
-              content="2020-04-29">
-          04-29
-        </time>
-      </div>
 
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/04/Hexo-Theme-Next/" itemprop="url">
-            <span itemprop="name">Hexo Theme Next</span>
-          </a>
-      </div>
 
-      
-    </header>
-  </article>
 
-    </div>
-  </div>
-  
-  
-  
+
 
 </div>
   </main>

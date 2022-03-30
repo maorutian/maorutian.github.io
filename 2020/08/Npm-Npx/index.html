@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width">
-<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.1.0">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 6.1.0">
 
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
@@ -13,22 +14,22 @@
 
 <link rel="stylesheet" href="/css/main.css">
 
-
+<link rel="stylesheet" href="//fonts.loli.net/css?family=Times+New+Roman:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.0.0/css/all.min.css" integrity="sha256-jTIdiMuX/e3DGJUGwl3pKSxuc6YOuqtJYkM0bGQESA4=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"maorutian.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.10.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":true,"transition":{"post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.json","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"maorutian.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.10.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":true,"transition":{"post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.json","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="We know npm is a package manager, we caninstall node.js packages using npm. But what is npx?I guess that everyone is confused when we start to learn React and see this code 1npx create-react-app my-ap">
+    <meta name="description" content="We know npm is a package manager, we caninstall node.js packages using npm. But what is npx?I guess that everyone is confused when we start to learn React and see this code npx create-react-app my-app">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Npm &amp; Npx">
 <meta property="og:url" content="https://maorutian.github.io/2020/08/Npm-Npx/index.html">
 <meta property="og:site_name" content="Maoru&#39;s Blog">
-<meta property="og:description" content="We know npm is a package manager, we caninstall node.js packages using npm. But what is npx?I guess that everyone is confused when we start to learn React and see this code 1npx create-react-app my-ap">
+<meta property="og:description" content="We know npm is a package manager, we caninstall node.js packages using npm. But what is npx?I guess that everyone is confused when we start to learn React and see this code npx create-react-app my-app">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-08-12T20:04:44.000Z">
-<meta property="article:modified_time" content="2022-03-24T15:38:57.811Z">
+<meta property="article:modified_time" content="2022-03-30T01:42:52.880Z">
 <meta property="article:author" content="Maoru Tian">
 <meta property="article:tag" content="Javascript">
 <meta name="twitter:card" content="summary">
@@ -157,7 +158,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">6</span>
+          <span class="site-state-item-count">7</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -259,7 +260,7 @@
     
     <div class="post-body" itemprop="articleBody">
         <p>We know <code>npm</code> is a package manager, we caninstall node.js packages using npm. But what is <code>npx</code>?<br>I guess that everyone is confused when we start to learn React and see this code</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npx create-react-app my-app</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npx create-react-app my-app</span><br></pre></td></tr></table></figure>
 
 <p>Let talk about <code>npx</code> and see what is the difference between npm and npx.</p>
 <span id="more"></span>
@@ -270,12 +271,12 @@
 <li><p>NPX uses the packages directly from npm registry, no global or local installation required.</p>
 </li>
 </ul>
-<h3 id="When-to-us-NPX"><a href="#When-to-us-NPX" class="headerlink" title="When to us NPX?"></a>When to us NPX?</h3><h4 id="Install-packages-neither-globally-nor-locally"><a href="#Install-packages-neither-globally-nor-locally" class="headerlink" title="Install packages neither globally nor locally"></a>Install packages neither globally nor locally</h4><p>Sometimes, we don’t want to install packages neither globally nor locally, like initiating project. For example, if we want to install <code>create-react-app</code>, we need use <code>npm -g</code> to install it globally. But we only need it when initiating project. It is a waste to install globally.<br>When we use npx, it downloads create-react-app to a template folder and delete it after install.</p>
+<h3 id="When-to-us-NPX"><a href="#When-to-us-NPX" class="headerlink" title="When to us NPX?"></a>When to us NPX?</h3><h4 id="Install-packages-neither-globally-nor-locally"><a href="#Install-packages-neither-globally-nor-locally" class="headerlink" title="Install packages neither globally nor locally"></a>Install packages neither globally nor locally</h4><p>Sometimes, we don&#39;t want to install packages neither globally nor locally, like initiating project. For example, if we want to install <code>create-react-app</code>, we need use <code>npm -g</code> to install it globally. But we only need it when initiating project. It is a waste to install globally.<br>When we use npx, it downloads create-react-app to a template folder and delete it after install.</p>
 <h4 id="Execute-commands-directly-in-Terminal-like-testing"><a href="#Execute-commands-directly-in-Terminal-like-testing" class="headerlink" title="Execute commands directly in Terminal like testing"></a>Execute commands directly in Terminal like testing</h4><p>For example, we want to test our code using <code>Mocha</code>, we are going to check the version of our <code>Mocha</code>.</p>
-<h5 id="without-NPX"><a href="#without-NPX" class="headerlink" title="without NPX"></a>without NPX</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./node_modules/.bin/ mocha --version</span><br></pre></td></tr></table></figure>
+<h5 id="without-NPX"><a href="#without-NPX" class="headerlink" title="without NPX"></a>without NPX</h5><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">./node_modules/.bin/ mocha --version</span><br></pre></td></tr></table></figure>
 
 <h5 id="with-NPX"><a href="#with-NPX" class="headerlink" title="with NPX"></a>with NPX</h5><p>it create a new shell to run the command.</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npx mocha  --version</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npx mocha  --version</span><br></pre></td></tr></table></figure>
 <p>Much better!</p>
 
     </div>

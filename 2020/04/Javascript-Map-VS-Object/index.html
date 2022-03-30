@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width">
-<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.1.0">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 6.1.0">
 
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
@@ -13,22 +14,22 @@
 
 <link rel="stylesheet" href="/css/main.css">
 
-
+<link rel="stylesheet" href="//fonts.loli.net/css?family=Times+New+Roman:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.0.0/css/all.min.css" integrity="sha256-jTIdiMuX/e3DGJUGwl3pKSxuc6YOuqtJYkM0bGQESA4=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"maorutian.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.10.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":true,"transition":{"post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.json","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"maorutian.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.10.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":true,"transition":{"post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.json","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="Map and Object both are data collection types, they all store key-value pairs. DifferenceKey type The keys MUST be String in Object. See Property Accessor docs   Property names must be strings. This">
+    <meta name="description" content="Map and Object both are data collection types, they all store key-value pairs. DifferenceKey type The keys MUST be String in Object. See Property Accessor docs   Property names must be strings. This m">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Javascript: Map VS Object">
 <meta property="og:url" content="https://maorutian.github.io/2020/04/Javascript-Map-VS-Object/index.html">
 <meta property="og:site_name" content="Maoru&#39;s Blog">
-<meta property="og:description" content="Map and Object both are data collection types, they all store key-value pairs. DifferenceKey type The keys MUST be String in Object. See Property Accessor docs   Property names must be strings. This">
+<meta property="og:description" content="Map and Object both are data collection types, they all store key-value pairs. DifferenceKey type The keys MUST be String in Object. See Property Accessor docs   Property names must be strings. This m">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-04-30T23:19:47.000Z">
-<meta property="article:modified_time" content="2022-03-24T15:38:57.810Z">
+<meta property="article:modified_time" content="2022-03-30T01:42:52.867Z">
 <meta property="article:author" content="Maoru Tian">
 <meta property="article:tag" content="Javascript">
 <meta property="article:tag" content="Map">
@@ -159,7 +160,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">6</span>
+          <span class="site-state-item-count">7</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -260,7 +261,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <p><code>Map</code> and <code>Object</code> both are data collection types, they all store key-value pairs.</p>
+        <p><code>Map</code> and <code>Object</code> both are data collection types, they all store key-value pairs.</p>
 <h3 id="Difference"><a href="#Difference" class="headerlink" title="Difference"></a>Difference</h3><h4 id="Key-type"><a href="#Key-type" class="headerlink" title="Key type"></a>Key type</h4><ul>
 <li>The keys MUST be String in <code>Object</code>. See <a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Property_Accessors">Property Accessor docs</a></li>
 </ul>
@@ -270,7 +271,7 @@
 <span id="more"></span>
 
 <p>Example:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&gt; var foo = &#123;&#125;</span><br><span class="line">undefined</span><br><span class="line"></span><br><span class="line">&gt; foo[23213] = &#x27;swag&#x27;</span><br><span class="line">&#x27;swag&#x27;</span><br><span class="line"></span><br><span class="line">&gt; foo</span><br><span class="line">&#123; &#x27;23213&#x27;: &#x27;swag&#x27; &#125;</span><br><span class="line"></span><br><span class="line">&gt; typeof(Object.keys(foo)[0])</span><br><span class="line">&#x27;string&#x27;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> foo = &#123;&#125;</span><br><span class="line"><span class="comment">//undefined</span></span><br><span class="line"></span><br><span class="line">foo[<span class="number">23213</span>] = <span class="string">&#x27;swag&#x27;</span></span><br><span class="line"><span class="comment">//&#x27;swag&#x27;</span></span><br><span class="line"></span><br><span class="line">foo</span><br><span class="line"><span class="comment">//&#123; &#x27;23213&#x27;: &#x27;swag&#x27; &#125;</span></span><br><span class="line"></span><br><span class="line"><span class="title function_">typeof</span>(<span class="title class_">Object</span>.<span class="title function_">keys</span>(foo)[<span class="number">0</span>])</span><br><span class="line"><span class="comment">//&#x27;string&#x27;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 <ul>
 <li>But in <code>Map</code> it can be ANY data type.</li>
@@ -286,15 +287,15 @@
 <li><code>Object </code> is not an instance of <code>Map</code>.</li>
 </ul>
 <h3 id="When-to-use-Map"><a href="#When-to-use-Map" class="headerlink" title="When to use Map"></a>When to use Map</h3><h4 id="loop-through"><a href="#loop-through" class="headerlink" title="loop through"></a>loop through</h4><p> <code>Map</code> is mainly used for fast searching and looking up data.</p>
-<p> For <code>Object </code>, if you want to loop through keys、values and entries, you have to convert Object to Array using <code>Object.keys()</code>、<code>Object.values()</code> and <code>Object.entries()</code>，or using <code>for ... in</code>. But a for…in loop only iterates over enumerable, non-Symbol properties, and the order is random.</p>
+<p> For <code>Object </code>, if you want to loop through keys、values and entries, you have to convert Object to Array using <code>Object.keys()</code>、<code>Object.values()</code> and <code>Object.entries()</code>，or using <code>for ... in</code>. But a for...in loop only iterates over enumerable, non-Symbol properties, and the order is random.</p>
 <p>A <code>Map</code> is an iterable, so it can be directly iterated.We can use <code>for ... of</code> or <code>forEach</code>.</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"> for (let [key, value] of map) &#123;</span><br><span class="line">  console.log(key);</span><br><span class="line">  console.log(value);</span><br><span class="line">&#125;;</span><br><span class="line">map.forEach((key, value) =&gt; &#123;</span><br><span class="line">  console.log(key);</span><br><span class="line">  console.log(value);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"> <span class="keyword">for</span> (<span class="keyword">let</span> [key, value] <span class="keyword">of</span> map) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(key);</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(value);</span><br><span class="line">&#125;;</span><br><span class="line">map.<span class="title function_">forEach</span>(<span class="function">(<span class="params">key, value</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(key);</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(value);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 
 <p>Besides, you can use <code>map.size</code> to get <code>length</code>. but you have to convert Object to Array in object and then use <code>Object.keys(&#123;&#125;).length</code></p>
 <h4 id="Lots-of-Add-and-delete-operations"><a href="#Lots-of-Add-and-delete-operations" class="headerlink" title="Lots of Add and delete operations"></a>Lots of Add and delete operations</h4><p><code>Map</code> is purely hash, in scenarios that requires a lot of adding and removing (especially) new pair, <code>Map</code> may perform much better.</p>
 <h4 id="Large-set-of-data"><a href="#Large-set-of-data" class="headerlink" title="Large set of data"></a>Large set of data</h4><p><code>Map</code> tends to perform better in storing large set of data, especially when keys are unknown until run time, and when all keys are the same type and all values are the same type.</p>
-<h3 id="when-to-use-object"><a href="#when-to-use-object" class="headerlink" title="when to use object"></a>when to use object</h3><h4 id="Separate-logic-to-individual-property"><a href="#Separate-logic-to-individual-property" class="headerlink" title="Separate logic to individual property"></a>Separate logic to individual property</h4><p>You variable need separate logic to different property, <code>Object </code> is the choice. <code>Map</code> doesn’t support it.</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123;</span><br><span class="line">    id: 1, </span><br><span class="line">    name: &quot;It&#x27;s Me!&quot;, </span><br><span class="line">    print: function()&#123; </span><br><span class="line">        return `Object Id: $&#123;this.id&#125;, with Name: $&#123;this.name&#125;`;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">console.log(obj.print());//Object Id: 1, with Name: It&#x27;s Me.</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="when-to-use-object"><a href="#when-to-use-object" class="headerlink" title="when to use object"></a>when to use object</h3><h4 id="Separate-logic-to-individual-property"><a href="#Separate-logic-to-individual-property" class="headerlink" title="Separate logic to individual property"></a>Separate logic to individual property</h4><p>You variable need separate logic to different property, <code>Object </code> is the choice. <code>Map</code> doesn&#39;t support it.</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">    <span class="attr">id</span>: <span class="number">1</span>, </span><br><span class="line">    <span class="attr">name</span>: <span class="string">&quot;It&#x27;s Me!&quot;</span>, </span><br><span class="line">    <span class="attr">print</span>: <span class="keyword">function</span>(<span class="params"></span>)&#123; </span><br><span class="line">        <span class="keyword">return</span> <span class="string">`Object Id: <span class="subst">$&#123;<span class="variable language_">this</span>.id&#125;</span>, with Name: <span class="subst">$&#123;<span class="variable language_">this</span>.name&#125;</span>`</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(obj.<span class="title function_">print</span>());<span class="comment">//Object Id: 1, with Name: It&#x27;s Me.</span></span><br></pre></td></tr></table></figure>
 
 <h4 id="JSON"><a href="#JSON" class="headerlink" title="JSON"></a>JSON</h4><p>JSON has support for <code>Object </code>, but not with <code>Map</code> (yet). So in certain situation where we have to work a lot with JSON, consider <code>Object </code> as preferred option.</p>
 
